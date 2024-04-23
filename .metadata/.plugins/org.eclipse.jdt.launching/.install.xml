@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
+    <entry loc="C:\eclipse-jee-2022-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.3.v20220515-1416\jre" stamp="1667356157538"/>
     <entry loc="C:\Program Files\Java\jdk1.8.0_202" stamp="1663888361748"/>
+    <entry loc="C:\eclipse-jee-2022-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.3.v20220515-1416" stamp="1667356153099"/>
     <entry loc="C:\Program Files\Java\jdk-19" stamp="1713721106095"/>
 </dirs>
