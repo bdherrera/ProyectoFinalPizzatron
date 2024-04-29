@@ -1,80 +1,64 @@
 package view;
 
-import java.awt.BorderLayout;
-import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel; // Necesario para usar JLabel
-import java.awt.Dimension; // Necesario para usar Dimension
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class VentanaPrincipal extends JFrame {
 
-	private Panel pPanel;
+	
+	private VentanaRegistroJugador jugador;
+	private JButton botonIrAMenu;
 
 	public VentanaPrincipal() {
+        setTitle("Ventana Principal");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
+        setLocationRelativeTo(null);
 
-		setTitle("");
-		setSize(800, 600);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
-		setLayout(null);
+        botonIrAMenu = new JButton("Ir al Menú");
+        botonIrAMenu.setBounds(300, 250, 200, 50);
+        botonIrAMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Crear una instancia de la ventana del menú y mostrarla
+            	jugador =  new VentanaRegistroJugador();
+               
+                jugador.setVisible(true);
+                
+                dispose();
+                
+            }
+        });
+        add(botonIrAMenu);
 
-		pPanel = new Panel();
-		pPanel.setBounds(10, 10, 770, 545);
-		add(pPanel);
+        setLayout(null);
+        setVisible(true);
+    }
 
-		setLocationRelativeTo(null);
-		setVisible(true);
 
-		setTitle("");
-		setSize(800, 600);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
-		setLayout(null);
 
-		pPanel = new Panel();
-		pPanel.setBounds(10, 10, 760, 540);
-		add(pPanel);
-
-		setLocationRelativeTo(null);
-		setVisible(true);
-
-		setTitle("");
-		setSize(800, 600);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
-		setLayout(null);
-
-		pPanel = new Panel();
-		pPanel.setBounds(100, 70, 600, 400);
-		add(pPanel);
-
-		setLocationRelativeTo(null);
-		setVisible(true);
-
+	public VentanaRegistroJugador getJugador() {
+		return jugador;
 	}
 
-	public Panel getpTutorial() {
-		return pPanel;
+
+
+	public void setJugador(VentanaRegistroJugador jugador) {
+		this.jugador = jugador;
 	}
 
-	public void setpTutorial(Panel pPanel) {
-		this.pPanel = pPanel;
+
+
+	public JButton getBotonIrAMenu() {
+		return botonIrAMenu;
 	}
 
-	public Panel getpBotones() {
-		return pPanel;
+	public void setBotonIrAMenu(JButton botonIrAMenu) {
+		this.botonIrAMenu = botonIrAMenu;
 	}
 
-	public void setpBotones(Panel pBotones) {
-		this.pPanel = pBotones;
-	}
-
-	public Panel getpPanel() {
-		return pPanel;
-	}
-
-	public void setpPanel(Panel pPanel) {
-		this.pPanel = pPanel;
-	}
-
+	
 }
