@@ -20,7 +20,7 @@ public class VentanaRegistroJugador extends JFrame {
 
     public VentanaRegistroJugador() {
         setTitle("Registro de Jugador");
-        setSize(800, 600);
+        setSize(830, 635);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);

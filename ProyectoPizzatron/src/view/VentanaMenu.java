@@ -1,9 +1,12 @@
 package view;
 
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
@@ -20,23 +23,33 @@ public class VentanaMenu extends JFrame {
     private JButton botonSalir;
 
     public VentanaMenu() {
-    	setTitle("Menú");
-        setSize(800, 600);
+    	setTitle("");
+        setSize(830, 635);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
 
         JPanel panelMenu = new JPanel();
-        panelMenu.setLayout(new BoxLayout(panelMenu, BoxLayout.Y_AXIS));
+        panelMenu.setLayout(null); // Usar null layout para control manual
         panelMenu.setBackground(new Color(230, 230, 250));
-        panelMenu.setBorder(new TitledBorder("Menu"));
+        panelMenu.setBorder(BorderFactory.createTitledBorder("Menu"));
+        panelMenu.setBounds(0, 0, 830, 635); // Tamaño del panel ajustado al tamaño de la ventana
+        add(panelMenu);
+        
+        ImageIcon imagenIcon = new ImageIcon("media/Botones/Main Menu.png");
+        JLabel imagenLabel = new JLabel(imagenIcon);
+        imagenLabel.setBounds(1, 1, 800, 600);  // Tamaño de la imagen ajustado al tamaño de la ventana
+        add(imagenLabel);
+       
 
-        botonPLAY = new JButton("PLAY");
-        botonPLAY.setAlignmentX(JButton.LEFT_ALIGNMENT);
+        ImageIcon playIcon = new ImageIcon("media/Botones/Play Button.png");
+        botonPLAY = new JButton(playIcon);
+        botonPLAY.setBounds(100, 50, 200, 50); // x, y, width, height
+        botonPLAY.setBorderPainted(false);
+        botonPLAY.setContentAreaFilled(false);
+        botonPLAY.setFocusPainted(false);
         botonPLAY.setActionCommand("Play");
         panelMenu.add(botonPLAY);
-        panelMenu.add(Box.createVerticalGlue());
-        panelMenu.add(Box.createVerticalStrut(15));
 
         botonNivelNormal = new JButton("Nivel Normal");
         botonNivelNormal.setAlignmentX(JButton.LEFT_ALIGNMENT);
