@@ -47,11 +47,10 @@ public class VentanaMenu extends JFrame {
         ImageIcon playIcon = new ImageIcon("media/Botones/Play Button.png");
         botonPLAY = new JButton(playIcon);
         botonPLAY.setBounds(60, 280, 200, 50); // x, y, width, height
-        botonPLAY.setBorderPainted(false);
-        botonPLAY.setContentAreaFilled(false);
-        botonPLAY.setFocusPainted(false);
-        botonPLAY.setActionCommand("Play");
+        botonPLAY.setAlignmentX(JButton.LEFT_ALIGNMENT);
+        botonPLAY.setActionCommand("PLAY");
         panelMenu.add(botonPLAY);
+        panelMenu.add(Box.createVerticalGlue());
         
         ImageIcon profilesIcon = new ImageIcon ("media/Botones/profiles.png");
         botonProfiles = new JButton (profilesIcon);
