@@ -21,6 +21,8 @@ public class VentanaMenu extends JFrame {
     private JButton botonNivelDulce;
     private JButton botonTutorial;
     private JButton botonSalir;
+    private JButton botonProfiles;
+    private JButton botonCharacter;
 
     public VentanaMenu() {
     	setTitle("");
@@ -44,14 +46,39 @@ public class VentanaMenu extends JFrame {
 
         ImageIcon playIcon = new ImageIcon("media/Botones/Play Button.png");
         botonPLAY = new JButton(playIcon);
-        botonPLAY.setBounds(100, 50, 200, 50); // x, y, width, height
-        botonPLAY.setBorderPainted(false);
-        botonPLAY.setContentAreaFilled(false);
-        botonPLAY.setFocusPainted(false);
-        botonPLAY.setActionCommand("Play");
+        botonPLAY.setBounds(60, 280, 200, 50); // x, y, width, height
+        botonPLAY.setAlignmentX(JButton.LEFT_ALIGNMENT);
+        botonPLAY.setActionCommand("PLAY");
         panelMenu.add(botonPLAY);
+        panelMenu.add(Box.createVerticalGlue());
+        
+        ImageIcon profilesIcon = new ImageIcon ("media/Botones/profiles.png");
+        botonProfiles = new JButton (profilesIcon);
+        botonProfiles.setBounds(60, 320, 200, 50);
+        botonProfiles.setAlignmentX(JButton.LEFT_ALIGNMENT);
+        botonProfiles.setActionCommand("PROFILES");
+        panelMenu.add(botonProfiles);
+        panelMenu.add(Box.createVerticalGlue());
+        
+        ImageIcon tutorialIcon = new ImageIcon ("media/Botones/how to play.png");
+        botonTutorial = new JButton("tutorialIcon");
+        botonTutorial.setBounds(60, 370, 200, 50);
+        botonTutorial.setAlignmentX(JButton.LEFT_ALIGNMENT);
+        botonTutorial.setActionCommand("TUTORIAL");
+        panelMenu.add(botonTutorial);
+        panelMenu.add(Box.createVerticalGlue()); 
+        
+        ImageIcon characterIcon = new ImageIcon("media/Botones/character.png");
+        botonCharacter = new JButton("characterIcon");
+        botonCharacter.setBounds(60, 410, 200, 50);
+        botonCharacter.setAlignmentX(JButton.LEFT_ALIGNMENT);
+        botonCharacter.setActionCommand("CHARACTER");
+        panelMenu.add(botonCharacter);
+        panelMenu.add(Box.createVerticalGlue());
+        
+       
 
-        botonNivelNormal = new JButton("Nivel Normal");
+      /*  botonNivelNormal = new JButton("Nivel Normal");
         botonNivelNormal.setAlignmentX(JButton.LEFT_ALIGNMENT);
         botonNivelNormal.setActionCommand("NORMAL");
         panelMenu.add(botonNivelNormal);
@@ -63,16 +90,13 @@ public class VentanaMenu extends JFrame {
         panelMenu.add(botonNivelDulce);
         panelMenu.add(Box.createVerticalGlue()); 
 
-        botonTutorial = new JButton("Tutorial");
-        botonTutorial.setAlignmentX(JButton.LEFT_ALIGNMENT);
-        botonTutorial.setActionCommand("TUTORIAL");
-        panelMenu.add(botonTutorial);
-        panelMenu.add(Box.createVerticalGlue()); 
+        
+        
         botonSalir = new JButton("Salir");
         botonSalir.setAlignmentX(JButton.LEFT_ALIGNMENT);
         botonSalir.setActionCommand("SALIR");
         panelMenu.add(botonSalir);
-        panelMenu.add(Box.createVerticalGlue()); 
+        panelMenu.add(Box.createVerticalGlue()); */
 
         JPanel panelContenedor = new JPanel(new BorderLayout());
         panelContenedor.add(panelMenu, BorderLayout.CENTER);
