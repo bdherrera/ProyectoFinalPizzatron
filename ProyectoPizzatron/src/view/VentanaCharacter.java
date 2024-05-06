@@ -10,10 +10,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaCharacter extends JFrame {
-
+	
 	private VentanaMenu jugador;
 	private JButton botonBack;
-	
+
 	public VentanaCharacter() {
 		setTitle("");
 		setSize(830, 635);
@@ -51,3 +51,4 @@ public class VentanaCharacter extends JFrame {
 
 	}
 }
+
