@@ -2,34 +2,38 @@ package view;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaPrincipal extends JFrame {
+    
+    private VentanaMenu jugador;
+    private JButton botonIrAMenu;
+    private JLabel imagenLabel;
 
-	
-	private VentanaRegistroJugador jugador;
-	private JButton botonIrAMenu;
-
-	public VentanaPrincipal() {
+    public VentanaPrincipal() {
         setTitle("Ventana Principal");
-        setSize(800, 600);
+        setSize(830, 635);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
 
+        // Configurar la imagen
+        ImageIcon imagenIcon = new ImageIcon("media/imagenes/Loading Screen-Recovered.png"); // Reemplaza con la ruta correcta a la imagen
+        imagenLabel = new JLabel(imagenIcon);
+        imagenLabel.setBounds(1, 1, 800, 600); // Ajusta la posición y tamaño según necesites
+        add(imagenLabel);
+
         botonIrAMenu = new JButton("Ir al Menú");
-        botonIrAMenu.setBounds(300, 250, 200, 50);
+        botonIrAMenu.setBounds(550, 500, 200, 50);
         botonIrAMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Crear una instancia de la ventana del menú y mostrarla
-            	jugador =  new VentanaRegistroJugador();
-               
+                jugador = new VentanaMenu();
                 jugador.setVisible(true);
-                
                 dispose();
-                
             }
         });
         add(botonIrAMenu);
@@ -38,27 +42,19 @@ public class VentanaPrincipal extends JFrame {
         setVisible(true);
     }
 
+    public VentanaMenu getJugador() {
+        return jugador;
+    }
 
+    public void setJugador(VentanaMenu jugador) {
+        this.jugador = jugador;
+    }
 
-	public VentanaRegistroJugador getJugador() {
-		return jugador;
-	}
+    public JButton getBotonIrAMenu() {
+        return botonIrAMenu;
+    }
 
-
-
-	public void setJugador(VentanaRegistroJugador jugador) {
-		this.jugador = jugador;
-	}
-
-
-
-	public JButton getBotonIrAMenu() {
-		return botonIrAMenu;
-	}
-
-	public void setBotonIrAMenu(JButton botonIrAMenu) {
-		this.botonIrAMenu = botonIrAMenu;
-	}
-
-	
+    public void setBotonIrAMenu(JButton botonIrAMenu) {
+        this.botonIrAMenu = botonIrAMenu;
+    }
 }
