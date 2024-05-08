@@ -1,14 +1,12 @@
 package view;
 
 import javax.swing.BorderFactory;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.TitledBorder;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -19,18 +17,14 @@ public class VentanaMenu extends JFrame {
 
 	private VentanaPLAY jugador;
 	private VentanaProfiles jugador2;
-	private VentanaCharacter jugador3;
+	private VentanaRegistroJugador jugador3;
 	private VentanaTutorial jugador4;
 	private JButton botonPLAY;
-	private JButton botonNivelNormal;
-	private JButton botonNivelDulce;
+
 	private JButton botonTutorial;
-	private JButton botonSalir;
+
 	private JButton botonProfiles;
 	private JButton botonCharacter;
-	private VentanaTutorial tutorial;
-	private ImageIcon tutorialIcon;
-	private ImageIcon characterIcon;
 
 	public VentanaMenu() {
 		setTitle("");
@@ -58,7 +52,6 @@ public class VentanaMenu extends JFrame {
 		botonPLAY.setActionCommand("PLAY");
 		botonPLAY.repaint();
 		panelMenu.add(botonPLAY);
-		panelMenu.add(Box.createVerticalGlue());
 		botonPLAY.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -75,7 +68,6 @@ public class VentanaMenu extends JFrame {
 		botonProfiles.setActionCommand("PROFILES");
 		botonProfiles.repaint();
 		panelMenu.add(botonProfiles);
-		panelMenu.add(Box.createVerticalGlue());
 		botonProfiles.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -90,9 +82,7 @@ public class VentanaMenu extends JFrame {
 		botonTutorial.setBounds(60, 370, 200, 50);
 		botonTutorial.setAlignmentX(JButton.LEFT_ALIGNMENT);
 		botonTutorial.setActionCommand("TUTORIAL");
-		botonTutorial.repaint();
 		panelMenu.add(botonTutorial);
-		panelMenu.add(Box.createVerticalGlue());
 		botonTutorial.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -109,34 +99,14 @@ public class VentanaMenu extends JFrame {
 		botonCharacter.setActionCommand("CHARACTER");
 		botonCharacter.repaint();
 		panelMenu.add(botonCharacter);
-		panelMenu.add(Box.createVerticalGlue());
 		botonCharacter.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				jugador3 = new VentanaCharacter();
+				jugador3 = new VentanaRegistroJugador();
 				jugador3.setVisible(true);
 				dispose();
 			}
 		});
-
-		/*
-		 * botonNivelNormal = new JButton("Nivel Normal");
-		 * botonNivelNormal.setAlignmentX(JButton.LEFT_ALIGNMENT);
-		 * botonNivelNormal.setActionCommand("NORMAL"); panelMenu.add(botonNivelNormal);
-		 * panelMenu.add(Box.createVerticalGlue());
-		 * 
-		 * botonNivelDulce = new JButton("Nivel Dulce");
-		 * botonNivelDulce.setAlignmentX(JButton.LEFT_ALIGNMENT);
-		 * botonNivelDulce.setActionCommand("DULCE"); panelMenu.add(botonNivelDulce);
-		 * panelMenu.add(Box.createVerticalGlue());
-		 * 
-		 * 
-		 * 
-		 * botonSalir = new JButton("Salir");
-		 * botonSalir.setAlignmentX(JButton.LEFT_ALIGNMENT);
-		 * botonSalir.setActionCommand("SALIR"); panelMenu.add(botonSalir);
-		 * panelMenu.add(Box.createVerticalGlue());
-		 */
 
 		JPanel panelContenedor = new JPanel(new BorderLayout());
 		panelContenedor.add(panelMenu, BorderLayout.CENTER);

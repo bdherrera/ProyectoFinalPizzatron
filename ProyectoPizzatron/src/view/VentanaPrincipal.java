@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 public class VentanaPrincipal extends JFrame {
     
-    private VentanaRegistroJugador jugador;
+    private VentanaMenu jugador;
     private JButton botonIrAMenu;
     private JLabel imagenLabel;
 
@@ -31,7 +31,7 @@ public class VentanaPrincipal extends JFrame {
         botonIrAMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                jugador = new VentanaRegistroJugador();
+                jugador = new VentanaMenu();
                 jugador.setVisible(true);
                 dispose();
             }
@@ -42,11 +42,11 @@ public class VentanaPrincipal extends JFrame {
         setVisible(true);
     }
 
-    public VentanaRegistroJugador getJugador() {
+    public VentanaMenu getJugador() {
         return jugador;
     }
 
-    public void setJugador(VentanaRegistroJugador jugador) {
+    public void setJugador(VentanaMenu jugador) {
         this.jugador = jugador;
     }
 

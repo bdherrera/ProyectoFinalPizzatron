@@ -9,24 +9,24 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class VentanaCharacter extends JFrame {
+public class VentanaNivelNormal extends JFrame {
 	
-	private VentanaMenu jugador;
+	private VentanaPLAY jugador;
 	private JButton botonBack;
 
-	public VentanaCharacter() {
+	public VentanaNivelNormal() {
 		setTitle("");
 		setSize(830, 635);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setResizable(false);
 		setLocationRelativeTo(null);
 
-		JPanel panelCharacter = new JPanel();
-		panelCharacter.setLayout(null);
-		panelCharacter.setBackground(new Color(230, 230, 250));
-		panelCharacter.setBorder(BorderFactory.createTitledBorder(""));
-		panelCharacter.setBounds(0, 0, 830, 635);
-		add(panelCharacter);
+		JPanel panelProfiles = new JPanel();
+		panelProfiles.setLayout(null);
+		panelProfiles.setBackground(new Color(230, 230, 250));
+		panelProfiles.setBorder(BorderFactory.createTitledBorder(""));
+		panelProfiles.setBounds(0, 0, 830, 635);
+		add(panelProfiles);
 		
 		botonBack = new JButton("Back");
 		botonBack.setBounds(620, 530, 120, 20);
@@ -35,7 +35,7 @@ public class VentanaCharacter extends JFrame {
 		botonBack.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				jugador = new VentanaMenu();
+				jugador = new VentanaPLAY();
 				jugador.setVisible(true);
 				dispose();
 			}
@@ -43,7 +43,7 @@ public class VentanaCharacter extends JFrame {
 
 
 		JPanel panelContenedor = new JPanel(new BorderLayout());
-		panelContenedor.add(panelCharacter, BorderLayout.CENTER);
+		panelContenedor.add(panelProfiles, BorderLayout.CENTER);
 
 		add(panelContenedor);
 
@@ -51,4 +51,3 @@ public class VentanaCharacter extends JFrame {
 
 	}
 }
-

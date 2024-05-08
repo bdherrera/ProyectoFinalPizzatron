@@ -13,7 +13,11 @@ public class VentanaPLAY extends JFrame {
 	
 	private VentanaMenu jugador;
 	private JButton botonBack;
-
+	private JButton botonNivelDulce;
+	private JButton botonNivelNormal;
+	private VentanaNivelDulce dulce;
+	private VentanaNivelNormal normal;
+	
 	public VentanaPLAY() {
 		setTitle("");
 		setSize(830, 635);
@@ -40,6 +44,33 @@ public class VentanaPLAY extends JFrame {
 				dispose();
 			}
 		});
+		
+		botonNivelDulce = new JButton("Nivel Dulce");
+		botonNivelDulce.setBounds(325, 230, 200, 50);
+		botonNivelDulce.setActionCommand("NIVEL DULCE");
+		add(botonNivelDulce);
+		botonNivelDulce.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dulce = new VentanaNivelDulce();
+				dulce.setVisible(true);
+				dispose();
+			}
+		});
+		botonNivelNormal = new JButton("Nivel Normal");
+		botonNivelNormal.setBounds(325, 300, 200, 50);
+		botonNivelNormal.setActionCommand("NIVEL NORMAL");
+		add(botonNivelNormal);
+		botonNivelNormal.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				normal = new VentanaNivelNormal();
+				normal.setVisible(true);
+				dispose();
+			}
+		});
+		
+		
 
 
 		JPanel panelContenedor = new JPanel(new BorderLayout());
