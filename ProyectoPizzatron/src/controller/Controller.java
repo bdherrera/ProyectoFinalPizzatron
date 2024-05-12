@@ -1,54 +1,50 @@
 package controller;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import view.VentanaGorras;
-import view.VentanaCamisas;
-import view.VentanaPantalones;
-import view.VentanaColor;
-import view.VentanaItems;
+import view.VentanaMenu;
+import view.VentanaNombre;
+import view.VentanaPrincipal;
 
 public class Controller {
-    
-    private VentanaItems ventanaItems;
+    private VentanaPrincipal ventanaPrincipal;
+    private VentanaNombre ventanaNombre;
+    private VentanaMenu ventanaMenu;
 
     public Controller() {
-        ventanaItems = new VentanaItems();
-        ventanaItems.setActionListenerGorra(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Abrir la ventana de selección de gorras
-                VentanaGorras ventanaGorras = new VentanaGorras();
-                ventanaGorras.setVisible(true);
-            }
-        });
+        // Crear la ventana principal y mostrarla primero
+        ventanaPrincipal = new VentanaPrincipal();
+        ventanaPrincipal.setVisible(true);
 
-        ventanaItems.setActionListenerCamisa(new ActionListener() {
+        // Agregar un ActionListener al botón de la ventana principal para mostrar la ventana de nombre
+        ventanaPrincipal.getBotonIrANombre().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Abrir la ventana de selección de camisas
-                VentanaCamisas ventanaCamisas = new VentanaCamisas();
-                ventanaCamisas.setVisible(true);
+                // Cerrar la ventana principal y abrir la ventana de nombre
+                ventanaPrincipal.dispose();
+                mostrarVentanaNombre();
             }
         });
+    }
 
-        ventanaItems.setActionListenerPantalon(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Abrir la ventana de selección de pantalones
-                VentanaPantalones ventanaPantalones = new VentanaPantalones();
-                ventanaPantalones.setVisible(true);
-            }
-        });
+    // Método para mostrar la ventana de nombre
+    private void mostrarVentanaNombre() {
+        ventanaNombre = new VentanaNombre();
+        ventanaNombre.setVisible(true);
 
-        ventanaItems.setActionListenerColor(new ActionListener() {
+        // Agregar un ActionListener al botón de la ventana de nombre para mostrar la ventana del menú
+        ventanaNombre.getBotonAceptar().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Abrir la ventana de selección de color
-                VentanaColor ventanaColor = new VentanaColor();
-                ventanaColor.setVisible(true);
+                // Cerrar la ventana de nombre y abrir la ventana del menú
+                ventanaNombre.dispose();
+                mostrarVentanaMenu();
             }
         });
+    }
+
+    // Método para mostrar la ventana del menú
+    private void mostrarVentanaMenu() {
+        ventanaMenu = new VentanaMenu();
+        ventanaMenu.setVisible(true);
     }
 }

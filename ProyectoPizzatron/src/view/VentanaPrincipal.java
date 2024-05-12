@@ -9,8 +9,8 @@ import java.awt.event.ActionListener;
 
 public class VentanaPrincipal extends JFrame {
     
-    private VentanaMenu jugador;
-    private JButton botonIrAMenu;
+    private VentanaNombre ventanaNombre; // Cambio en el tipo de ventana
+    private JButton botonIrANombre; // Cambio en el nombre del botón
     private JLabel imagenLabel;
 
     public VentanaPrincipal() {
@@ -26,35 +26,49 @@ public class VentanaPrincipal extends JFrame {
         imagenLabel.setBounds(1, 1, 800, 600); // Ajusta la posición y tamaño según necesites
         add(imagenLabel);
 
-        botonIrAMenu = new JButton("Ir al Menú");
-        botonIrAMenu.setBounds(550, 500, 200, 50);
-        botonIrAMenu.addActionListener(new ActionListener() {
+        // Modificación del botón y su ActionListener
+        botonIrANombre = new JButton("Ir a Ingresar Nombre");
+        botonIrANombre.setBounds(550, 500, 200, 50);
+        botonIrANombre.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                jugador = new VentanaMenu();
-                jugador.setVisible(true);
-                dispose();
+                // Crear y mostrar la ventana de nombre
+                ventanaNombre = new VentanaNombre();
+                ventanaNombre.setVisible(true);
+                dispose(); // Cerrar la ventana principal
             }
         });
-        add(botonIrAMenu);
+        add(botonIrANombre);
 
         setLayout(null);
         setVisible(true);
     }
 
-    public VentanaMenu getJugador() {
-        return jugador;
-    }
+	public VentanaNombre getVentanaNombre() {
+		return ventanaNombre;
+	}
 
-    public void setJugador(VentanaMenu jugador) {
-        this.jugador = jugador;
-    }
+	public void setVentanaNombre(VentanaNombre ventanaNombre) {
+		this.ventanaNombre = ventanaNombre;
+	}
 
-    public JButton getBotonIrAMenu() {
-        return botonIrAMenu;
-    }
+	public JButton getBotonIrANombre() {
+		return botonIrANombre;
+	}
 
-    public void setBotonIrAMenu(JButton botonIrAMenu) {
-        this.botonIrAMenu = botonIrAMenu;
-    }
+	public void setBotonIrANombre(JButton botonIrANombre) {
+		this.botonIrANombre = botonIrANombre;
+	}
+
+	public JLabel getImagenLabel() {
+		return imagenLabel;
+	}
+
+	public void setImagenLabel(JLabel imagenLabel) {
+		this.imagenLabel = imagenLabel;
+	}
+
+    
+    // Getters y setters para los componentes (botón, imagen, etc.)
+    // No hay cambios en estos métodos
 }
