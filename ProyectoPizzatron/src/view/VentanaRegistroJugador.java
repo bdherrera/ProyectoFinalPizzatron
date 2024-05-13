@@ -54,7 +54,7 @@ public class VentanaRegistroJugador extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Aquí podrías agregar la lógica para guardar el nombre y el color del jugador
-            	menu = new VentanaMenu();
+            	menu = new VentanaMenu(null);
                 dispose(); // Cerrar la ventana de registro después de confirmar
             }
         });

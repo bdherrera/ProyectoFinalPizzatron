@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import model.PerfilJugador;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -25,8 +27,10 @@ public class VentanaMenu extends JFrame {
 
 	private JButton botonProfiles;
 	private JButton botonCharacter;
+	private PerfilJugador perfilJugador; 
 
-	public VentanaMenu() {
+	public VentanaMenu(PerfilJugador perfilJugador) {
+		this.perfilJugador = perfilJugador;
 		setTitle("");
 		setSize(830, 635);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
