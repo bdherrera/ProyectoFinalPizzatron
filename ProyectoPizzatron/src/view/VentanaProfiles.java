@@ -35,7 +35,7 @@ public class VentanaProfiles extends JFrame {
 		botonBack.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				jugador = new VentanaMenu();
+				jugador = new VentanaMenu(null);
 				jugador.setVisible(true);
 				dispose();
 			}
