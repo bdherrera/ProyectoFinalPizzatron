@@ -29,24 +29,24 @@ public class Controller {
         });
     }
 
-    // Método para mostrar la ventana de nombre
     private void mostrarVentanaNombre() {
-        ventanaNombre = new VentanaNombre();
+        if (ventanaNombre == null) {
+            ventanaNombre = new VentanaNombre();
+            // Agregar el ActionListener al botón de la ventana de nombre
+            ventanaNombre.getBotonAceptar().addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    // Almacenar el nombre ingresado en el perfil del jugador
+                    String nombreJugador = ventanaNombre.getNombreIngresado();
+                    perfilJugador = new PerfilJugador(nombreJugador);
+
+                    // Cerrar la ventana de nombre y abrir la ventana del menú
+                    ventanaNombre.dispose();
+                    mostrarVentanaMenu();
+                }
+            });
+        }
         ventanaNombre.setVisible(true);
-
-        // Agregar un ActionListener al botón de la ventana de nombre para almacenar el nombre y mostrar la ventana del menú
-        ventanaNombre.getBotonAceptar().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Almacenar el nombre ingresado en el perfil del jugador
-                String nombreJugador = ventanaNombre.getNombreIngresado();
-                perfilJugador = new PerfilJugador(nombreJugador);
-
-                // Cerrar la ventana de nombre y abrir la ventana del menú
-                ventanaNombre.dispose();
-                mostrarVentanaMenu();
-            }
-        });
     }
 
     // Método para mostrar la ventana del menú
