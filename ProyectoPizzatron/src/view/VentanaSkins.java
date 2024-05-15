@@ -1,18 +1,9 @@
 package view;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import view.VentanaPinguino;
-import view.VentanaItems;
-
 
 public class VentanaSkins extends JFrame {
 
@@ -79,6 +70,12 @@ public class VentanaSkins extends JFrame {
             }
         });
         add(botonConfirmar, BorderLayout.SOUTH);
+
+        // Establecer el fondo de la ventana
+        JLabel labelFondo = new JLabel();
+        labelFondo.setIcon(new ImageIcon(getClass().getResource("/imagenes/fondo.png")));
+        getContentPane().add(labelFondo, BorderLayout.CENTER);
+        setLayout(new FlowLayout());
 
         setVisible(true);
     }
