@@ -26,7 +26,7 @@ public class VentanaMenu extends JFrame {
 
 	public VentanaMenu(PerfilJugador perfilJugador) {
 		this.perfilJugador = perfilJugador;
-		setTitle("Ventana Menú");
+		setTitle("");
 		setSize(830, 635);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setResizable(false);
@@ -62,8 +62,8 @@ public class VentanaMenu extends JFrame {
 		ImageIcon profilesIcon = new ImageIcon("media/Botones/profiles.png");
 		botonProfiles = new JButton(profilesIcon);
 		botonProfiles.setBounds(70, 330, 180, 35);
-		botonProfiles.setOpaque(false); 
-		botonProfiles.setContentAreaFilled(false); 
+		botonProfiles.setOpaque(false); // Establece el fondo del botón como transparente
+		botonProfiles.setContentAreaFilled(false); // Establece el área de contenido del botón como transparente
 		botonProfiles.setBorderPainted(false);
 		botonProfiles.setActionCommand("PROFILES");
 		panelMenu.add(botonProfiles);
@@ -79,9 +79,9 @@ public class VentanaMenu extends JFrame {
 		ImageIcon tutorialIcon = new ImageIcon("media/Botones/how to play.png");
 		botonTutorial = new JButton(tutorialIcon);
 		botonTutorial.setBounds(70, 370, 180, 35); 
-		botonTutorial.setOpaque(false);
-		botonTutorial.setContentAreaFilled(false); 
-		botonTutorial.setBorderPainted(false);
+		botonTutorial.setOpaque(false); // Establece el fondo del botón como transparente
+		botonTutorial.setContentAreaFilled(false); // Establece el área de contenido del botón como transparente
+		botonTutorial.setBorderPainted(false);// Ajusta las coordenadas según sea necesario
 		botonTutorial.setActionCommand("TUTORIAL");
 		panelMenu.add(botonTutorial);
 		botonTutorial.addActionListener(new ActionListener() {
@@ -96,8 +96,8 @@ public class VentanaMenu extends JFrame {
 		ImageIcon characterIcon = new ImageIcon("media/Botones/character.png");
 		botonCharacter = new JButton(characterIcon);
 		botonCharacter.setBounds(70, 410, 180, 35);
-		botonCharacter.setOpaque(false); 
-		botonCharacter.setContentAreaFilled(false); 
+		botonCharacter.setOpaque(false); // Establece el fondo del botón como transparente
+		botonCharacter.setContentAreaFilled(false); // Establece el área de contenido del botón como transparente
 		botonCharacter.setBorderPainted(false);
 		botonCharacter.setActionCommand("CHARACTER");
 		panelMenu.add(botonCharacter);
