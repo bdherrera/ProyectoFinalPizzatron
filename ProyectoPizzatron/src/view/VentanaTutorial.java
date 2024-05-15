@@ -5,6 +5,7 @@ import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -33,9 +34,17 @@ public class VentanaTutorial extends JFrame {
 		
 		ImageIcon ContinuarIcon = new ImageIcon("media/Botones/TAP TO PLAY.png");
 		botonContinuar = new JButton(ContinuarIcon);
-		botonContinuar.setBounds(620, 530, 120, 20);
+		botonContinuar.setBounds(580, 500, 200, 70);
+		botonContinuar.setOpaque(false); // Establece el fondo del botón como transparente
+		botonContinuar.setContentAreaFilled(false); // Establece el área de contenido del botón como transparente
+		botonContinuar.setBorderPainted(false);
 		botonContinuar.setActionCommand("CONTINUAR");
 		add(botonContinuar);
+		
+		ImageIcon imagenIcon = new ImageIcon("media/Botones/instrucciones.png");
+		JLabel imagenLabel = new JLabel(imagenIcon);
+		imagenLabel.setBounds(1, 1, 800, 600);
+		panelTutorial.add(imagenLabel);
 		
 	
 

@@ -132,7 +132,7 @@ public class Controller {
 		ventanaTutorial = new VentanaTutorial();
 		ventanaTutorial.setBotonContinuarListener(e -> {
 			ventanaTutorial.dispose(); // Cerrar ventana PLAY
-			mostrarVentanaMenu(); // Mostrar la ventana del menú nuevamente
+			mostrarVentanaPLAY(); // Mostrar la ventana del menú nuevamente
 		});
 		ventanaTutorial.setVisible(true);
 	}
