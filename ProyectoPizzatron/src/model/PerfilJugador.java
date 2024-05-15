@@ -2,11 +2,11 @@ package model;
 
 public class PerfilJugador {
     private String nombre;
-    private int puntuacion;
+    private int Score;
 
     public PerfilJugador(String nombre) {
         this.nombre = nombre;
-        this.puntuacion = 0;
+        this.Score = 0;
     }
 
     // Métodos para obtener y establecer el nombre del jugador
@@ -18,30 +18,21 @@ public class PerfilJugador {
         this.nombre = nombre;
     }
 
-    // Métodos para obtener y establecer la puntuación del jugador
-    public int getPuntuacion() {
-        return puntuacion;
-    }
-
-    public void setPuntuacion(int puntuacion) {
-        this.puntuacion = puntuacion;
-    }
-
-    // Método para aumentar la puntuación del jugador
-    public void aumentarPuntuacion(int puntos) {
-        this.puntuacion += puntos;
-    }
-
-    // Método para reiniciar la puntuación del jugador
-    public void reiniciarPuntuacion() {
-        this.puntuacion = 0;
-    }
-
+  
     @Override
     public String toString() {
         return "PerfilJugador{" +
                 "nombre='" + nombre + '\'' +
-                ", puntuacion=" + puntuacion +
+                ", puntuacion=" + Score +
                 '}';
     }
+
+	public void setScore(int score) {
+		Score = score;
+	}
+
+	public int getScore() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
