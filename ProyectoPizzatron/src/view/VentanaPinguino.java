@@ -73,4 +73,10 @@ public class VentanaPinguino extends JFrame {
             labelPinguino.setIcon(new ImageIcon(pinguinoImage));
         }
     }
+
+	public void actualizarPinguino(ImageIcon gorraSeleccionada2, ImageIcon camisaSeleccionada2,
+			ImageIcon pantalonSeleccionado2) {
+		// TODO Auto-generated method stub
+		
+	}
 }
