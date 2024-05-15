@@ -12,12 +12,10 @@ import view.VentanaPLAY;
 import view.VentanaPrincipal;
 import view.VentanaProfiles;
 import view.VentanaTutorial;
-import view.VentanaRegistroJugador;
+
 import view.VentanaSkins;
 import view.VentanaNivelNormal;
 import view.VentanaNivelDulce;
-import view.VentanaItems;
-import view.VentanaPinguino;
 
 public class Controller {
 	private VentanaPrincipal ventanaPrincipal;
@@ -30,8 +28,6 @@ public class Controller {
 	private VentanaSkins ventanaSkins;
 	private VentanaNivelDulce ventanaNivelDulce;
 	private VentanaNivelNormal ventanaNivelNormal;
-	private VentanaItems ventanaItems;
-	private VentanaPinguino ventanaPinguino;
 
 	public Controller() {
 		// Crear la ventana principal y mostrarla primero
@@ -134,7 +130,7 @@ public class Controller {
 	private void mostrarVentanaTutorial() {
 		ventanaMenu.dispose(); // Cerrar ventana anterior
 		ventanaTutorial = new VentanaTutorial();
-		ventanaTutorial.setBotonBackListener(e -> {
+		ventanaTutorial.setBotonContinuarListener(e -> {
 			ventanaTutorial.dispose(); // Cerrar ventana PLAY
 			mostrarVentanaMenu(); // Mostrar la ventana del menú nuevamente
 		});
@@ -162,18 +158,12 @@ public class Controller {
 		ventanaSkins.setVisible(true);
 		ventanaMenu.dispose(); 
 		ventanaSkins = new VentanaSkins(null);
-        ventanaSkins.setBotonVerPinguinoListener(e -> {
+        ventanaSkins.setBotonConfirmarListener(e -> {
         	ventanaSkins.dispose(); 
-			mostrarVentanaPinguino(); 
+			mostrarVentanaMenu(); 
 		});
 		ventanaSkins.setVisible(true);
-		ventanaMenu.dispose(); 
-		ventanaSkins = new VentanaSkins(null);
-        ventanaSkins.setBotonVerItemsListener(e -> {
-        	ventanaSkins.dispose(); 
-			mostrarVentanaItems(); 
-		});
-		ventanaSkins.setVisible(true);
+		
 		
 	}
 	
@@ -197,12 +187,6 @@ public class Controller {
 			mostrarVentanaMenu(); // Mostrar la ventana del menú nuevamente
 		});
 		ventanaNivelNormal.setVisible(true);
-	}
-	private void mostrarVentanaItems() {
-		
-	}
-	private void mostrarVentanaPinguino() {
-		
 	}
 	
 

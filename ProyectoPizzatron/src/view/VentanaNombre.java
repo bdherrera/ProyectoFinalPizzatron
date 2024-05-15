@@ -16,6 +16,7 @@ public class VentanaNombre extends JFrame {
         setResizable(false); // No permitir redimensionar la ventana
 
         // Panel principal
+      
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new BorderLayout());
 

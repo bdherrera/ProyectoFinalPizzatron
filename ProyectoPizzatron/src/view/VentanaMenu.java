@@ -16,7 +16,7 @@ public class VentanaMenu extends JFrame {
 
 	private VentanaPLAY ventanaPlay;
 	private VentanaProfiles ventanaProfiles;
-	private VentanaRegistroJugador ventanaRegistroJugador;
+	
 	private VentanaTutorial ventanaTutorial;
 	private VentanaSkins ventanaSkins;
 	private JButton botonPLAY;

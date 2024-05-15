@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,7 +14,7 @@ import java.awt.event.ActionListener;
 public class VentanaTutorial extends JFrame {
 	
 	private VentanaMenu jugador;
-	private JButton botonBack;
+	private JButton botonContinuar;
 	private JButton botonPLAY;
 
 	public VentanaTutorial() {
@@ -30,10 +31,11 @@ public class VentanaTutorial extends JFrame {
 		panelTutorial.setBounds(0, 0, 830, 635);
 		add(panelTutorial);
 		
-		botonBack = new JButton("Back");
-		botonBack.setBounds(620, 530, 120, 20);
-		botonBack.setActionCommand("BACK");
-		add(botonBack);
+		ImageIcon ContinuarIcon = new ImageIcon("media/Botones/TAP TO PLAY.png");
+		botonContinuar = new JButton(ContinuarIcon);
+		botonContinuar.setBounds(620, 530, 120, 20);
+		botonContinuar.setActionCommand("CONTINUAR");
+		add(botonContinuar);
 		
 	
 
@@ -45,8 +47,8 @@ public class VentanaTutorial extends JFrame {
 		setVisible(true);
 
 	}
-	public void setBotonBackListener(ActionListener listener) {
-	    botonBack.addActionListener(listener);
+	public void setBotonContinuarListener(ActionListener listener) {
+	    botonContinuar.addActionListener(listener);
 	}
 	
 }

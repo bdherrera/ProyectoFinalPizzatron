@@ -79,4 +79,5 @@ public class VentanaPinguino extends JFrame {
 		// TODO Auto-generated method stub
 		
 	}
+	
 }

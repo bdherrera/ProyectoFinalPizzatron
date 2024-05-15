@@ -39,15 +39,21 @@ public class VentanaPLAY extends JFrame {
 		botonBack.setActionCommand("BACK");
 		add(botonBack);
 		
-		
-		botonNivelDulce = new JButton("Nivel Dulce");
-		botonNivelDulce.setBounds(70, 390, 180, 35);
+		ImageIcon dulceIcon = new ImageIcon("media/Botones/CANDY M-01.png");
+		botonNivelDulce = new JButton(dulceIcon);
+		botonNivelDulce.setBounds(70, 380, 180, 35);
+		botonNivelDulce.setOpaque(false); // Establece el fondo del botón como transparente
+		botonNivelDulce.setContentAreaFilled(false); // Establece el área de contenido del botón como transparente
+		botonNivelDulce.setBorderPainted(false);
 		botonNivelDulce.setActionCommand("NIVEL DULCE");
 		add(botonNivelDulce);
 		
-		
-		botonNivelNormal = new JButton("Nivel Normal");
+		ImageIcon normalIcon = new ImageIcon("media/Botones/PIZZATRN.png");
+		botonNivelNormal = new JButton(normalIcon);
 		botonNivelNormal.setBounds(70, 310, 180, 35);
+		botonNivelNormal.setOpaque(false); // Establece el fondo del botón como transparente
+		botonNivelNormal.setContentAreaFilled(false); // Establece el área de contenido del botón como transparente
+		botonNivelNormal.setBorderPainted(false);
 		botonNivelNormal.setActionCommand("NIVEL NORMAL");
 		add(botonNivelNormal);
 		
