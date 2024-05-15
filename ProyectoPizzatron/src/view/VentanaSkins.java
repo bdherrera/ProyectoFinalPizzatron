@@ -13,6 +13,8 @@ public class VentanaSkins extends JFrame {
     private JButton botonVerItems;
     private VentanaPinguino ventanaPinguino;
     private VentanaItems ventanaItems;
+  
+
 
     public VentanaSkins(String nombreJugador) {
         setTitle("Personalización de Pingüino");
@@ -79,5 +81,14 @@ public class VentanaSkins extends JFrame {
 
         setVisible(true);
     }
+	public void setBotonConfirmarListener(ActionListener listener) {
+		botonConfirmar.addActionListener(listener);
+	}
+	public void setBotonVerPinguinoListener(ActionListener listener) {
+		botonVerPinguino.addActionListener(listener);
+	}
+	public void setBotonVerItemsListener(ActionListener listener) {
+		botonVerItems.addActionListener(listener);
+	}
 
 }

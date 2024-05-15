@@ -13,8 +13,11 @@ import view.VentanaPrincipal;
 import view.VentanaProfiles;
 import view.VentanaTutorial;
 import view.VentanaRegistroJugador;
+import view.VentanaSkins;
 import view.VentanaNivelNormal;
 import view.VentanaNivelDulce;
+import view.VentanaItems;
+import view.VentanaPinguino;
 
 public class Controller {
 	private VentanaPrincipal ventanaPrincipal;
@@ -24,9 +27,11 @@ public class Controller {
 	private VentanaPLAY ventanaPlay;
 	private VentanaProfiles ventanaProfiles;
 	private VentanaTutorial ventanaTutorial;
-	private VentanaRegistroJugador ventanaRegistroJugador;
+	private VentanaSkins ventanaSkins;
 	private VentanaNivelDulce ventanaNivelDulce;
 	private VentanaNivelNormal ventanaNivelNormal;
+	private VentanaItems ventanaItems;
+	private VentanaPinguino ventanaPinguino;
 
 	public Controller() {
 		// Crear la ventana principal y mostrarla primero
@@ -91,7 +96,7 @@ public class Controller {
 			ventanaMenu.setBotonCharacterListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					mostrarVentanaRegistroJugador();
+					mostrarVentanaSkins();
 				}
 			});
 
@@ -147,15 +152,31 @@ public class Controller {
 		ventanaProfiles.setVisible(true);
 	}
 
-	private void mostrarVentanaRegistroJugador() {
-		ventanaMenu.dispose(); // Cerrar ventana anterior
-		ventanaRegistroJugador = new VentanaRegistroJugador();
-		ventanaRegistroJugador.setBotonConfirmarListener(e -> {
-			ventanaRegistroJugador.dispose(); // Cerrar ventana PLAY
-			mostrarVentanaMenu(); // Mostrar la ventana del menú nuevamente
+	private void mostrarVentanaSkins() {
+		ventanaMenu.dispose(); 
+		ventanaSkins = new VentanaSkins(null);
+        ventanaSkins.setBotonConfirmarListener(e -> {
+        	ventanaSkins.dispose(); 
+			mostrarVentanaMenu(); 
 		});
-		ventanaNivelDulce.setVisible(true);
+		ventanaSkins.setVisible(true);
+		ventanaMenu.dispose(); 
+		ventanaSkins = new VentanaSkins(null);
+        ventanaSkins.setBotonVerPinguinoListener(e -> {
+        	ventanaSkins.dispose(); 
+			mostrarVentanaPinguino(); 
+		});
+		ventanaSkins.setVisible(true);
+		ventanaMenu.dispose(); 
+		ventanaSkins = new VentanaSkins(null);
+        ventanaSkins.setBotonVerItemsListener(e -> {
+        	ventanaSkins.dispose(); 
+			mostrarVentanaItems(); 
+		});
+		ventanaSkins.setVisible(true);
+		
 	}
+	
 
 	private void mostrarVentanaNivelDulce() {
 
@@ -177,5 +198,12 @@ public class Controller {
 		});
 		ventanaNivelNormal.setVisible(true);
 	}
+	private void mostrarVentanaItems() {
+		
+	}
+	private void mostrarVentanaPinguino() {
+		
+	}
+	
 
 }
