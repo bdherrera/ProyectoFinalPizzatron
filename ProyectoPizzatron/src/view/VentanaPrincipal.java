@@ -1,52 +1,58 @@
 package view;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 public class VentanaPrincipal extends JFrame {
-    
-    private JButton botonIrANombre;
-    private JLabel imagenLabel;
 
-    public VentanaPrincipal() {
-        setTitle("Ventana Principal");
-        setSize(830, 635);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-        setLocationRelativeTo(null);
+	private JButton botonIrANombre;
+	private JLabel imagenLabel;
 
-        // Configurar la imagen
-        ImageIcon imagenIcon = new ImageIcon("media/imagenes/Loading Screen-Recovered.png");
-        imagenLabel = new JLabel(imagenIcon);
-        imagenLabel.setBounds(1, 1, 800, 600);
-        add(imagenLabel);
+	public VentanaPrincipal() {
+		setTitle("Ventana Principal");
+		setSize(830, 635);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setLocationRelativeTo(null);
 
-        // Modificación del botón y su ActionListener
-        botonIrANombre = new JButton("Ir a Ingresar Nombre");
-        botonIrANombre.setBounds(550, 500, 200, 50);
+		// Configurar la imagen
 
-        // No necesitamos agregar ActionListener aquí
+		// Modificación del botón y su ActionListener
+		ImageIcon tapToPlayIcon = new ImageIcon("media/Botones/TAP TO PLAY.png");
+		botonIrANombre = new JButton(tapToPlayIcon);
+		botonIrANombre.setBounds(550, 500, 200, 50);
+		botonIrANombre.setOpaque(false);
+		botonIrANombre.setContentAreaFilled(false);
+		botonIrANombre.setBorderPainted(false);
+		botonIrANombre.setActionCommand("CONTINUAR");
 
-        add(botonIrANombre);
+		// No necesitamos agregar ActionListener aquí
 
-        setLayout(null);
-        setVisible(true);
-    }
+		add(botonIrANombre);
 
-    public JButton getBotonIrANombre() {
-        return botonIrANombre;
-    }
+		ImageIcon imagenIcon = new ImageIcon("media/imagenes/Loading Screen-Recovered.png");
+		imagenLabel = new JLabel(imagenIcon);
+		imagenLabel.setBounds(1, 1, 800, 600);
+		add(imagenLabel);
 
-    public void setBotonIrANombre(JButton botonIrANombre) {
-        this.botonIrANombre = botonIrANombre;
-    }
+		setLayout(null);
+	}
 
-    public JLabel getImagenLabel() {
-        return imagenLabel;
-    }
+	public JButton getBotonIrANombre() {
+		return botonIrANombre;
+	}
 
-    public void setImagenLabel(JLabel imagenLabel) {
-        this.imagenLabel = imagenLabel;
-    }
+	public void setBotonIrANombre(JButton botonIrANombre) {
+		this.botonIrANombre = botonIrANombre;
+	}
+
+	public JLabel getImagenLabel() {
+		return imagenLabel;
+	}
+
+	public void setImagenLabel(JLabel imagenLabel) {
+		this.imagenLabel = imagenLabel;
+	}
 }
