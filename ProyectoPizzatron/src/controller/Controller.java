@@ -5,23 +5,13 @@ import java.awt.event.ActionListener;
 import model.PerfilJugador;
 import view.VentanaMenu;
 import view.VentanaNombre;
-import view.VentanaPLAY;
 import view.VentanaPrincipal;
-import view.VentanaProfiles;
-import view.VentanaRegistroJugador;
-import view.VentanaScore;
-import view.VentanaTutorial;
-
-
 
 public class Controller {
-	
-	
     private VentanaPrincipal ventanaPrincipal;
     private VentanaNombre ventanaNombre;
     private VentanaMenu ventanaMenu;
     private PerfilJugador perfilJugador;
-    private VentanaScore ventanaScore;
 
     public Controller() {
         // Crear la ventana principal y mostrarla primero
@@ -59,54 +49,9 @@ public class Controller {
         ventanaNombre.setVisible(true);
     }
 
+    // Método para mostrar la ventana del menú
     private void mostrarVentanaMenu() {
-        ventanaMenu = new VentanaMenu(perfilJugador);
+        ventanaMenu = new VentanaMenu(perfilJugador); // Pasar el perfil del jugador a la ventana del menú
         ventanaMenu.setVisible(true);
-        agregarActionListenersMenu();
-    }
-
-    private void agregarActionListenersMenu() {
-        ventanaMenu.getBotonPLAY().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                VentanaPLAY ventanaPLAY = new VentanaPLAY();
-                ventanaPLAY.setVisible(true);
-                ventanaMenu.dispose();
-            }
-        });
-
-        ventanaMenu.getBotonProfiles().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                VentanaProfiles ventanaProfiles = new VentanaProfiles();
-                ventanaProfiles.setVisible(true);
-                ventanaMenu.dispose();
-            }
-        });
-
-        ventanaMenu.getBotonTutorial().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                VentanaTutorial ventanaTutorial = new VentanaTutorial();
-                ventanaTutorial.setVisible(true);
-                ventanaMenu.dispose();
-            }
-        });
-
-        ventanaMenu.getBotonCharacter().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                VentanaRegistroJugador ventanaRegistroJugador = new VentanaRegistroJugador();
-                ventanaRegistroJugador.setVisible(true);
-                ventanaMenu.dispose();
-            }
-        });
-    }
-    private void mostrarVentanaScore() {
-        if (ventanaScore == null) {
-            ventanaScore = new VentanaScore();
-        }
-        ventanaScore.setVisible(true);
-        ventanaScore.updateScore(perfilJugador.getScore()); // Supongamos que PerfilJugador tiene un método getScore()
     }
 }
