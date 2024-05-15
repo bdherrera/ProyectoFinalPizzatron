@@ -1,92 +1,105 @@
 package view;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.GridLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaItems extends JFrame {
 
-    private JButton botonGorra1;
-    private JButton botonGorra2;
-    private JButton botonPantalon1;
-    private JButton botonPantalon2;
-    private JButton botonColor1;
-    private JButton botonColor2;
-    private JButton botonCamisa1;
-    private JButton botonCamisa2;
+    private JToggleButton[] botonesGorras;
+    private JToggleButton[] botonesCamisas;
+    private JToggleButton[] botonesPantalones;
+    private JButton botonContinuar;
+
+    // Almacena las imágenes seleccionadas de gorra, camisa y pantalón
+    private ImageIcon gorraSeleccionada;
+    private ImageIcon camisaSeleccionada;
+    private ImageIcon pantalonSeleccionado;
 
     public VentanaItems() {
         setTitle("Opciones de Personalización");
-        setSize(400, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Crear el panel para los botones de opciones
-        JPanel panel = new JPanel(new GridLayout(4, 2));
-        add(panel);
+        JPanel panelPrincipal = new JPanel(new GridLayout(3, 2, 10, 10));
+        panelPrincipal.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        add(panelPrincipal);
 
-        // Botones para seleccionar gorra
-        botonGorra1 = new JButton("Seleccionar Gorra 1");
-        botonGorra2 = new JButton("Seleccionar Gorra 2");
+        // Panel de gorras
+        JPanel panelGorras = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelGorras.setBorder(BorderFactory.createTitledBorder("Gorras"));
+        panelPrincipal.add(panelGorras);
 
-        // Botones para seleccionar pantalón
-        botonPantalon1 = new JButton("Seleccionar Pantalón 1");
-        botonPantalon2 = new JButton("Seleccionar Pantalón 2");
+        // Panel de camisas
+        JPanel panelCamisas = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelCamisas.setBorder(BorderFactory.createTitledBorder("Camisas"));
+        panelPrincipal.add(panelCamisas);
 
-        // Botones para seleccionar color
-        botonColor1 = new JButton("Seleccionar Color 1");
-        botonColor2 = new JButton("Seleccionar Color 2");
+        // Panel de pantalones
+        JPanel panelPantalones = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelPantalones.setBorder(BorderFactory.createTitledBorder("Pantalones"));
+        panelPrincipal.add(panelPantalones);
 
-        // Botones para seleccionar camisa
-        botonCamisa1 = new JButton("Seleccionar Camisa 1");
-        botonCamisa2 = new JButton("Seleccionar Camisa 2");
+        // Botones de gorras
+        botonesGorras = new JToggleButton[2];
+        botonesGorras[0] = createToggleButton("/imagenes/g_azul.png", "Gorra Azul", panelGorras);
+        botonesGorras[1] = createToggleButton("/imagenes/g_negra.png", "Gorra Negra", panelGorras);
 
-        // Agregar botones al panel
-        panel.add(botonGorra1);
-        panel.add(botonGorra2);
-        panel.add(botonPantalon1);
-        panel.add(botonPantalon2);
-        panel.add(botonColor1);
-        panel.add(botonColor2);
-        panel.add(botonCamisa1);
-        panel.add(botonCamisa2);
+        // Botones de camisas
+        botonesCamisas = new JToggleButton[2];
+        botonesCamisas[0] = createToggleButton("/imagenes/c_blanca.png", "Camisa Blanca", panelCamisas);
+        botonesCamisas[1] = createToggleButton("/imagenes/c_negra.png", "Camisa Negra", panelCamisas);
 
+        // Botones de pantalones
+        botonesPantalones = new JToggleButton[2];
+        botonesPantalones[0] = createToggleButton("/imagenes/p_verde.png", "Pantalón Verde", panelPantalones);
+        botonesPantalones[1] = createToggleButton("/imagenes/p_rojo.png", "Pantalón Rojo", panelPantalones);
+
+        // Botón de continuar
+        botonContinuar = new JButton("Continuar");
+        botonContinuar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Obtener la imagen seleccionada de gorra
+                gorraSeleccionada = getSelectedIcon(botonesGorras);
+                // Obtener la imagen seleccionada de camisa
+                camisaSeleccionada = getSelectedIcon(botonesCamisas);
+                // Obtener la imagen seleccionada de pantalón
+                pantalonSeleccionado = getSelectedIcon(botonesPantalones);
+
+                // Crear una nueva instancia de VentanaPinguino y pasar las imágenes seleccionadas
+                VentanaPinguino ventanaPinguino = new VentanaPinguino(gorraSeleccionada, camisaSeleccionada, pantalonSeleccionado);
+                ventanaPinguino.setVisible(true);
+            }
+        });
+        add(botonContinuar, BorderLayout.SOUTH);
+
+        pack();
         setVisible(true);
     }
 
-    // Métodos para establecer ActionListener para los botones
-    public void setActionListenerGorra1(ActionListener listener) {
-        botonGorra1.addActionListener(listener);
+    private JToggleButton createToggleButton(String imagePath, String buttonText, JPanel panel) {
+        ImageIcon icon = new ImageIcon(getClass().getResource(imagePath));
+        Image image = icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(image);
+        JToggleButton button = new JToggleButton(buttonText, scaledIcon);
+        button.setVerticalTextPosition(SwingConstants.BOTTOM);
+        button.setHorizontalTextPosition(SwingConstants.CENTER);
+        panel.add(button);
+        return button;
     }
 
-    public void setActionListenerGorra2(ActionListener listener) {
-        botonGorra2.addActionListener(listener);
+    private ImageIcon getSelectedIcon(JToggleButton[] buttons) {
+        for (JToggleButton button : buttons) {
+            if (button.isSelected()) {
+                return (ImageIcon) button.getIcon();
+            }
+        }
+        return null;
     }
 
-    public void setActionListenerPantalon1(ActionListener listener) {
-        botonPantalon1.addActionListener(listener);
-    }
-
-    public void setActionListenerPantalon2(ActionListener listener) {
-        botonPantalon2.addActionListener(listener);
-    }
-
-    public void setActionListenerColor1(ActionListener listener) {
-        botonColor1.addActionListener(listener);
-    }
-
-    public void setActionListenerColor2(ActionListener listener) {
-        botonColor2.addActionListener(listener);
-    }
-
-    public void setActionListenerCamisa1(ActionListener listener) {
-        botonCamisa1.addActionListener(listener);
-    }
-
-    public void setActionListenerCamisa2(ActionListener listener) {
-        botonCamisa2.addActionListener(listener);
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new VentanaItems());
     }
 }
