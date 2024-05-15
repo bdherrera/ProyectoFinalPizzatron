@@ -14,10 +14,11 @@ import java.awt.event.ActionListener;
 
 public class VentanaMenu extends JFrame {
 
-	private VentanaPLAY jugador;
-	private VentanaProfiles jugador2;
-	private VentanaRegistroJugador jugador3;
-	private VentanaTutorial jugador4;
+	private VentanaPLAY ventanaPlay;
+	private VentanaProfiles ventanaProfiles;
+	private VentanaRegistroJugador ventanaRegistroJugador;
+	private VentanaTutorial ventanaTutorial;
+	private VentanaSkins ventanaSkins;
 	private JButton botonPLAY;
 	private JButton botonTutorial;
 	private JButton botonProfiles;
@@ -53,8 +54,8 @@ public class VentanaMenu extends JFrame {
 		botonPLAY.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				jugador = new VentanaPLAY();
-				jugador.setVisible(true);
+				ventanaPlay = new VentanaPLAY();
+				ventanaPlay.setVisible(true);
 
 			}
 		});
@@ -70,8 +71,8 @@ public class VentanaMenu extends JFrame {
 		botonProfiles.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				jugador2 = new VentanaProfiles();
-				jugador2.setVisible(true);
+				 ventanaProfiles= new VentanaProfiles();
+				 ventanaProfiles.setVisible(true);
 
 			}
 		});
@@ -87,8 +88,8 @@ public class VentanaMenu extends JFrame {
 		botonTutorial.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				jugador4 = new VentanaTutorial();
-				jugador4.setVisible(true);
+				ventanaTutorial = new VentanaTutorial();
+				ventanaTutorial.setVisible(true);
 
 			}
 		});
@@ -104,8 +105,8 @@ public class VentanaMenu extends JFrame {
 		botonCharacter.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				jugador3 = new VentanaRegistroJugador();
-				jugador3.setVisible(true);
+				ventanaSkins = new VentanaSkins(null);
+				ventanaSkins.setVisible(true);
 
 			}
 		});
