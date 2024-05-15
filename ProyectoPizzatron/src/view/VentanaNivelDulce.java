@@ -15,7 +15,7 @@ public class VentanaNivelDulce extends JFrame {
 	private JButton botonBack;
 
 	public VentanaNivelDulce() {
-		setTitle("");
+		setTitle("Ventana Nivel Dulce");
 		setSize(830, 635);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setResizable(false);
@@ -32,14 +32,7 @@ public class VentanaNivelDulce extends JFrame {
 		botonBack.setBounds(620, 530, 120, 20);
 		botonBack.setActionCommand("BACK");
 		add(botonBack);
-		botonBack.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				jugador = new VentanaPLAY();
-				jugador.setVisible(true);
-				dispose();
-			}
-		});
+	
 
 
 		JPanel panelContenedor = new JPanel(new BorderLayout());
@@ -49,5 +42,8 @@ public class VentanaNivelDulce extends JFrame {
 
 		setVisible(true);
 
+	}
+	public void setBotonBackListener(ActionListener listener) {
+	    botonBack.addActionListener(listener);
 	}
 }

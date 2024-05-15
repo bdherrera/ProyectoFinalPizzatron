@@ -15,7 +15,7 @@ public class VentanaNivelNormal extends JFrame {
 	private JButton botonBack;
 
 	public VentanaNivelNormal() {
-		setTitle("");
+		setTitle("Ventana Nivel Normal");
 		setSize(830, 635);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setResizable(false);
@@ -32,15 +32,7 @@ public class VentanaNivelNormal extends JFrame {
 		botonBack.setBounds(620, 530, 120, 20);
 		botonBack.setActionCommand("BACK");
 		add(botonBack);
-		botonBack.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				jugador = new VentanaPLAY();
-				jugador.setVisible(true);
-				dispose();
-			}
-		});
-
+		
 
 		JPanel panelContenedor = new JPanel(new BorderLayout());
 		panelContenedor.add(panelProfiles, BorderLayout.CENTER);
@@ -49,5 +41,8 @@ public class VentanaNivelNormal extends JFrame {
 
 		setVisible(true);
 
+	}
+	public void setBotonBackListener(ActionListener listener) {
+	    botonBack.addActionListener(listener);
 	}
 }

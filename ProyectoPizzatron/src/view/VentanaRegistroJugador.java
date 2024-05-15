@@ -50,14 +50,7 @@ public class VentanaRegistroJugador extends JFrame {
 
         // Botón para confirmar el registro
         botonConfirmar = new JButton("Confirmar Registro");
-        botonConfirmar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Aquí podrías agregar la lógica para guardar el nombre y el color del jugador
-            	menu = new VentanaMenu(null);
-                dispose(); // Cerrar la ventana de registro después de confirmar
-            }
-        });
+       
 
         // Añadir el panel de registro y el botón de confirmar a la ventana principal
         add(panelRegistro, BorderLayout.CENTER);
@@ -65,5 +58,10 @@ public class VentanaRegistroJugador extends JFrame {
 
         setVisible(true);
     }
+    public void setBotonConfirmarListener(ActionListener listener) {
+	    botonConfirmar.addActionListener(listener);
+	}
+
+    
 
 }

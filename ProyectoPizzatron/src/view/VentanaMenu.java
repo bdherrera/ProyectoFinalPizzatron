@@ -40,9 +40,6 @@ public class VentanaMenu extends JFrame {
 		panelMenu.setBounds(0, 0, 830, 635);
 		add(panelMenu);
 
-	
-
-
 		ImageIcon playIcon = new ImageIcon("media/Botones/Play Button.png");
 		botonPLAY = new JButton(playIcon);
 		botonPLAY.setBounds(70, 280, 180, 35);
@@ -51,7 +48,6 @@ public class VentanaMenu extends JFrame {
 		botonPLAY.setBorderPainted(false);
 		botonPLAY.setActionCommand("PLAY");
 		panelMenu.add(botonPLAY);
-		
 
 		ImageIcon profilesIcon = new ImageIcon("media/Botones/profiles.png");
 		botonProfiles = new JButton(profilesIcon);
@@ -61,17 +57,15 @@ public class VentanaMenu extends JFrame {
 		botonProfiles.setBorderPainted(false);
 		botonProfiles.setActionCommand("PROFILES");
 		panelMenu.add(botonProfiles);
-		
 
 		ImageIcon tutorialIcon = new ImageIcon("media/Botones/how to play.png");
 		botonTutorial = new JButton(tutorialIcon);
-		botonTutorial.setBounds(70, 370, 180, 35); 
+		botonTutorial.setBounds(70, 370, 180, 35);
 		botonTutorial.setOpaque(false); // Establece el fondo del botón como transparente
 		botonTutorial.setContentAreaFilled(false); // Establece el área de contenido del botón como transparente
 		botonTutorial.setBorderPainted(false);// Ajusta las coordenadas según sea necesario
 		botonTutorial.setActionCommand("TUTORIAL");
 		panelMenu.add(botonTutorial);
-		
 
 		ImageIcon characterIcon = new ImageIcon("media/Botones/character.png");
 		botonCharacter = new JButton(characterIcon);
@@ -81,13 +75,12 @@ public class VentanaMenu extends JFrame {
 		botonCharacter.setBorderPainted(false);
 		botonCharacter.setActionCommand("CHARACTER");
 		panelMenu.add(botonCharacter);
-		
-		
+
 		ImageIcon imagenIcon = new ImageIcon("media/Botones/Main Menu.png");
 		JLabel imagenLabel = new JLabel(imagenIcon);
-		imagenLabel.setBounds(1, 1, 800, 600); 
+		imagenLabel.setBounds(1, 1, 800, 600);
 		panelMenu.add(imagenLabel);
-		
+
 		JPanel panelContenedor = new JPanel(new BorderLayout());
 		panelContenedor.add(panelMenu, BorderLayout.CENTER);
 
@@ -100,18 +93,21 @@ public class VentanaMenu extends JFrame {
 
 	}
 
-
 // Método para establecer el ActionListener del botón "PLAY"
-public void setBotonPLAYListener(ActionListener listener) {
-    botonPLAY.addActionListener(listener);
-}
-public void setBotonProfilesListener(ActionListener listener) {
-    botonPLAY.addActionListener(listener);
-}
-public void setBotonTutorialListener(ActionListener listener) {
-    botonPLAY.addActionListener(listener);
-}
-public void setBotonCharacterListener(ActionListener listener) {
-    botonPLAY.addActionListener(listener);
-}
+	public void setBotonPLAYListener(ActionListener listener) {
+		botonPLAY.addActionListener(listener);
+	}
+
+	public void setBotonProfilesListener(ActionListener listener) {
+		botonProfiles.addActionListener(listener);
+	}
+
+	public void setBotonTutorialListener(ActionListener listener) {
+		botonTutorial.addActionListener(listener);
+	}
+
+	public void setBotonCharacterListener(ActionListener listener) {
+		botonCharacter.addActionListener(listener);
+	}
+	
 }

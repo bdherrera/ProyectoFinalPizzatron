@@ -1,8 +1,10 @@
 package view;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -36,41 +38,24 @@ public class VentanaPLAY extends JFrame {
 		botonBack.setBounds(620, 530, 120, 20);
 		botonBack.setActionCommand("BACK");
 		add(botonBack);
-		botonBack.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				jugador = new VentanaMenu(null);
-				jugador.setVisible(true);
-				dispose();
-			}
-		});
+		
 		
 		botonNivelDulce = new JButton("Nivel Dulce");
-		botonNivelDulce.setBounds(325, 230, 200, 50);
+		botonNivelDulce.setBounds(70, 390, 180, 35);
 		botonNivelDulce.setActionCommand("NIVEL DULCE");
 		add(botonNivelDulce);
-		botonNivelDulce.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dulce = new VentanaNivelDulce();
-				dulce.setVisible(true);
-				dispose();
-			}
-		});
+		
+		
 		botonNivelNormal = new JButton("Nivel Normal");
-		botonNivelNormal.setBounds(325, 300, 200, 50);
+		botonNivelNormal.setBounds(70, 310, 180, 35);
 		botonNivelNormal.setActionCommand("NIVEL NORMAL");
 		add(botonNivelNormal);
-		botonNivelNormal.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				normal = new VentanaNivelNormal();
-				normal.setVisible(true);
-				dispose();
-			}
-		});
 		
 		
+		ImageIcon imagenIcon = new ImageIcon("media/Botones/Main Menu.png");
+		JLabel imagenLabel = new JLabel(imagenIcon);
+		imagenLabel.setBounds(1, 1, 800, 600);
+		panelPLAY.add(imagenLabel);
 
 
 		JPanel panelContenedor = new JPanel(new BorderLayout());
@@ -81,4 +66,16 @@ public class VentanaPLAY extends JFrame {
 		setVisible(true);
 
 	}
+	public void setBotonBackListener(ActionListener listener) {
+	    botonBack.addActionListener(listener);
+	}
+
+	public void setBotonNivelDulceListener(ActionListener listener) {
+	    botonNivelDulce.addActionListener(listener);
+	}
+
+	public void setBotonNivelNormalListener(ActionListener listener) {
+	    botonNivelNormal.addActionListener(listener);
+	}
+
 }

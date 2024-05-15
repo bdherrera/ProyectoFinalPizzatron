@@ -14,6 +14,7 @@ public class VentanaTutorial extends JFrame {
 	
 	private VentanaMenu jugador;
 	private JButton botonBack;
+	private JButton botonPLAY;
 
 	public VentanaTutorial() {
 		setTitle("");
@@ -33,14 +34,8 @@ public class VentanaTutorial extends JFrame {
 		botonBack.setBounds(620, 530, 120, 20);
 		botonBack.setActionCommand("BACK");
 		add(botonBack);
-		botonBack.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				jugador = new VentanaMenu(null);
-				jugador.setVisible(true);
-				dispose();
-			}
-		});
+		
+	
 
 		JPanel panelContenedor = new JPanel(new BorderLayout());
 		panelContenedor.add(panelTutorial, BorderLayout.CENTER);
@@ -50,4 +45,8 @@ public class VentanaTutorial extends JFrame {
 		setVisible(true);
 
 	}
+	public void setBotonBackListener(ActionListener listener) {
+	    botonBack.addActionListener(listener);
+	}
+	
 }
