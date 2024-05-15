@@ -50,7 +50,7 @@ public class VentanaSkins extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (ventanaPinguino == null) {
-                    ventanaPinguino = new VentanaPinguino();
+                    ventanaPinguino = new VentanaPinguino(null, null, null);
                 }
                 ventanaPinguino.setVisible(true);
             }
