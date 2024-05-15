@@ -51,14 +51,7 @@ public class VentanaMenu extends JFrame {
 		botonPLAY.setBorderPainted(false);
 		botonPLAY.setActionCommand("PLAY");
 		panelMenu.add(botonPLAY);
-		botonPLAY.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ventanaPlay = new VentanaPLAY();
-				ventanaPlay.setVisible(true);
-
-			}
-		});
+		
 
 		ImageIcon profilesIcon = new ImageIcon("media/Botones/profiles.png");
 		botonProfiles = new JButton(profilesIcon);
@@ -68,14 +61,7 @@ public class VentanaMenu extends JFrame {
 		botonProfiles.setBorderPainted(false);
 		botonProfiles.setActionCommand("PROFILES");
 		panelMenu.add(botonProfiles);
-		botonProfiles.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				 ventanaProfiles= new VentanaProfiles();
-				 ventanaProfiles.setVisible(true);
-
-			}
-		});
+		
 
 		ImageIcon tutorialIcon = new ImageIcon("media/Botones/how to play.png");
 		botonTutorial = new JButton(tutorialIcon);
@@ -85,14 +71,7 @@ public class VentanaMenu extends JFrame {
 		botonTutorial.setBorderPainted(false);// Ajusta las coordenadas según sea necesario
 		botonTutorial.setActionCommand("TUTORIAL");
 		panelMenu.add(botonTutorial);
-		botonTutorial.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ventanaTutorial = new VentanaTutorial();
-				ventanaTutorial.setVisible(true);
-
-			}
-		});
+		
 
 		ImageIcon characterIcon = new ImageIcon("media/Botones/character.png");
 		botonCharacter = new JButton(characterIcon);
@@ -102,14 +81,7 @@ public class VentanaMenu extends JFrame {
 		botonCharacter.setBorderPainted(false);
 		botonCharacter.setActionCommand("CHARACTER");
 		panelMenu.add(botonCharacter);
-		botonCharacter.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ventanaSkins = new VentanaSkins(null);
-				ventanaSkins.setVisible(true);
-
-			}
-		});
+		
 		
 		ImageIcon imagenIcon = new ImageIcon("media/Botones/Main Menu.png");
 		JLabel imagenLabel = new JLabel(imagenIcon);
@@ -127,4 +99,19 @@ public class VentanaMenu extends JFrame {
 		panelMenu.repaint();
 
 	}
+
+
+// Método para establecer el ActionListener del botón "PLAY"
+public void setBotonPLAYListener(ActionListener listener) {
+    botonPLAY.addActionListener(listener);
+}
+public void setBotonProfilesListener(ActionListener listener) {
+    botonPLAY.addActionListener(listener);
+}
+public void setBotonTutorialListener(ActionListener listener) {
+    botonPLAY.addActionListener(listener);
+}
+public void setBotonCharacterListener(ActionListener listener) {
+    botonPLAY.addActionListener(listener);
+}
 }
