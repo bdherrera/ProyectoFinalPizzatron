@@ -64,18 +64,18 @@ public class Pizza extends JPanel {
     private int x7 = 0;
     private int y7 = 457; // Posición y de la imagen 7
     private int x10 = 795;
-    private int x12 = 130;
-    private int y12 = 320;
-    private int x13 = 170;
+    private int x12 = 125;
+    private int y12 = 300;
+    private int x13 = 176;
     private int y13 = 320;
-    private int x14 = 220;
-    private int y14 = 345;
+    private int x14 = 235;
+    private int y14 = 360;
     private int x16 = 310;
-    private int y16 = 367;
+    private int y16 = 360;
     private int x18 = 410;
     private int y18 = 360;
     private int x20 = 500;
-    private int y20 = 360;
+    private int y20 = 350;
     private int x22 = 590;
     private int y22 = 360;
     private int x15, y15;
@@ -108,27 +108,27 @@ public class Pizza extends JPanel {
         imagen7 = new ImageIcon(getClass().getResource("/Imagenes/Base.png"));
         imagen10 = new ImageIcon(getClass().getResource("/Imagenes/Caja.png"));
         
-        imagen12 = new ImageIcon(getClass().getResource("/Imagenes/SalsadePizza.png"));
-        imagen13 = new ImageIcon(getClass().getResource("/Imagenes/SalsaPicante.png"));
+        imagen12 = new ImageIcon(getClass().getResource("/Imagenes/Crema.png"));
+        imagen13 = new ImageIcon(getClass().getResource("/Imagenes/BotellaChocolate.png"));
         
-        imagen14 = new ImageIcon(getClass().getResource("/Imagenes/KESO.png"));
-        imagen15 = new ImageIcon(getClass().getResource("/Imagenes/quesoenpizza.png"));
+        imagen14 = new ImageIcon(getClass().getResource("/Imagenes/SprinklesEstante.png"));
+        imagen15 = new ImageIcon(getClass().getResource("/Imagenes/Sprinkles.png"));
         
-        imagen16 = new ImageIcon(getClass().getResource("/Imagenes/ALGAS.png"));
-        imagen17 = new ImageIcon(getClass().getResource("/Imagenes/ALGITA.png"));
+        imagen16 = new ImageIcon(getClass().getResource("/Imagenes/chocolates.png"));
+        imagen17 = new ImageIcon(getClass().getResource("/Imagenes/ChocolateKiss.png"));
         
-        imagen18 = new ImageIcon(getClass().getResource("/Imagenes/peces.png"));
-        imagen19 = new ImageIcon(getClass().getResource("/Imagenes/Fish1.png"));
+        imagen18 = new ImageIcon(getClass().getResource("/Imagenes/jellybeans.png"));
+        imagen19 = new ImageIcon(getClass().getResource("/Imagenes/Jellybean.png"));
         
-        imagen20 = new ImageIcon(getClass().getResource("/Imagenes/Calamares.png"));
-        imagen21 = new ImageIcon(getClass().getResource("/Imagenes/Squid2.png"));
+        imagen20 = new ImageIcon(getClass().getResource("/Imagenes/malbaviscos.png"));
+        imagen21 = new ImageIcon(getClass().getResource("/Imagenes/Malvabisco.png"));
         
-        imagen22 = new ImageIcon(getClass().getResource("/Imagenes/CAMARONES.png"));
-        imagen23 = new ImageIcon(getClass().getResource("/Imagenes/sHRIMP.png"));
+        imagen22 = new ImageIcon(getClass().getResource("/Imagenes/CandyCanes.png"));
+        imagen23 = new ImageIcon(getClass().getResource("/Imagenes/CandyCane.png"));
         
         
-        brushImage1 = new ImageIcon(getClass().getResource("/Imagenes/SalsaPicante.png"));
-        brushImage2 = new ImageIcon(getClass().getResource("/Imagenes/SalsadePizza.png"));
+        brushImage1 = new ImageIcon(getClass().getResource("/Imagenes/BotellaChocolate.png"));
+        brushImage2 = new ImageIcon(getClass().getResource("/Imagenes/Crema.png"));
         
         x15 = x7 + 30;
         y15 = y7 + 50; // Cambia esto según sea necesario
@@ -209,9 +209,11 @@ public class Pizza extends JPanel {
                 if (x22 <= e.getX() && e.getX() <= x22 + 115 && y22 <= e.getY() && e.getY() <= y22 + 145) {
                     setImagen23Visible(true); // Generar la imagen 23
                 }
+                 
 
             
         }
+            
         
 
             @Override
@@ -310,8 +312,28 @@ public class Pizza extends JPanel {
 
         if (cajaBounds.intersects(pizzaBounds)) { // Si hay intersección entre las dos áreas
             System.out.println("¡Colisión detectada!"); // Mostrar mensaje en la consola
+            reiniciarDibujo(); // Reiniciar el trazado del área de dibujo
+            limpiarImagenes(); // Limpiar las imágenes generadas encima de la imagen 7
         }
     }
+
+    private void reiniciarDibujo() {
+        // Reiniciar el trazado del path
+        path.reset();
+        repaint(); // Volver a pintar el panel para reflejar los cambios
+    }
+
+    private void limpiarImagenes() {
+        // Establecer el contador de imágenes a 0
+        imagen17Counter = 0;
+        imagen19Counter = 0;
+        imagen21Counter = 0;
+        imagen23Counter = 0;
+
+        // Redibujar el panel para eliminar las imágenes generadas
+        repaint();
+    }
+
     
     //primera parte
     
@@ -332,7 +354,7 @@ public class Pizza extends JPanel {
         moveImage17(relativeX, relativeY); // Actualizar la posición de la imagen 17
         
         // Dibujar la imagen 17
-        g.drawImage(imagen17.getImage(), relativeX, relativeY, 100, 100, null);
+        g.drawImage(imagen17.getImage(), relativeX, relativeY, 50, 50, null);
         
         // Ajustar las coordenadas de la próxima imagen 17
         x17 += 110; // Mover la siguiente imagen 17 hacia la derecha
@@ -370,7 +392,7 @@ public class Pizza extends JPanel {
         moveImage19(relativeX, relativeY); // Actualizar la posición de la imagen 17
         
         // Dibujar la imagen 17
-        g.drawImage(imagen19.getImage(), relativeX, relativeY, 100, 100, null);
+        g.drawImage(imagen19.getImage(), relativeX, relativeY, 50, 50, null);
         
         // Ajustar las coordenadas de la próxima imagen 17
         x19 += 110; // Mover la siguiente imagen 17 hacia la derecha
@@ -408,7 +430,7 @@ public class Pizza extends JPanel {
         moveImage21(relativeX, relativeY); // Actualizar la posición de la imagen 17
         
         // Dibujar la imagen 17
-        g.drawImage(imagen21.getImage(), relativeX, relativeY, 100, 100, null);
+        g.drawImage(imagen21.getImage(), relativeX, relativeY, 50, 50, null);
         
         // Ajustar las coordenadas de la próxima imagen 17
         x21 += 110; // Mover la siguiente imagen 17 hacia la derecha
@@ -512,8 +534,8 @@ public class Pizza extends JPanel {
         
         
 	    g2d.drawImage(imagen1.getImage(), x1,  335, 130, 300, null);
-	    g2d.drawImage(imagen12.getImage(), x12, y12, 35, 100, null);
-        g2d.drawImage(imagen13.getImage(), x13, y13, 40, 100, null);
+	    g2d.drawImage(imagen12.getImage(), x12, y12, 45, 120, null);
+        g2d.drawImage(imagen13.getImage(), x13, y13, 30, 100, null);
         
         
 	    g2d.drawImage(imagen3.getImage(), 100, 363, 70, 70, null);
@@ -522,14 +544,14 @@ public class Pizza extends JPanel {
 	    
         
         g2d.drawImage(imagen10.getImage(), x10, 400, 220, 287, null);
-        g2d.drawImage(imagen14.getImage(), x14, y14, 125, 100, null);
-        g2d.drawImage(imagen16.getImage(), x16, y16, 135, 80, null);
-        g2d.drawImage(imagen18.getImage(), x18, y18, 125, 80, null);
-        g2d.drawImage(imagen20.getImage(), x20, y20, 125, 80, null);
+        g2d.drawImage(imagen14.getImage(), x14, y14, 110, 80, null);
+        g2d.drawImage(imagen16.getImage(), x16, y16, 120, 80, null);
+        g2d.drawImage(imagen18.getImage(), x18, y18, 120, 80, null);
+        g2d.drawImage(imagen20.getImage(), x20, y20, 120, 100, null);
         
 
      // Dibujar el óvalo que delimita el área de dibujo encima de la imagen 7
-        g2d.setColor(Color.BLACK); // Color transparentenew Color(0, 0, 0, 0)new Color(0, 0, 0, 0)
+        g2d.setColor(new Color(0, 0, 0, 0)); // Color transparentenew Color(0, 0, 0, 0)new Color(0, 0, 0, 0)
         g2d.setStroke(new BasicStroke(0)); // Sin trazo
         g2d.draw(drawingArea);
 
@@ -542,15 +564,15 @@ public class Pizza extends JPanel {
 
         // Cambiar el color del trazo y el relleno del óvalo según el tipo de pincel 
         if (isRedBrush) {
-            g2d.setColor(Color.RED); // Restablecer el color del trazo a rojo
+            g2d.setColor(new Color(64, 40, 0)); // Restablecer el color del trazo a rojo
             g2d.setStroke(new BasicStroke(12, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND)); // Restablecer el trazo
             g2d.draw(path);
-            g2d.setColor(Color.RED); // Rellenar el óvalo con color rojo
+            g2d.setColor(new Color(64, 40, 0)); // Rellenar el óvalo con color rojo
         } else {
-            g2d.setColor(new Color(255,69,0)); // Restablecer el color del trazo a naranja
+            g2d.setColor(Color.PINK); // Restablecer el color del trazo a naranja
             g2d.setStroke(new BasicStroke(12, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND)); // Restablecer el trazo
             g2d.draw(path);
-            g2d.setColor(new Color(255,69,0)); // Rellenar el óvalo con color naranja
+            g2d.setColor(Color.PINK); // Rellenar el óvalo con color naranja
         }
 
         // Calcular el área total del óvalo

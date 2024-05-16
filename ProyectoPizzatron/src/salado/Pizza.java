@@ -12,6 +12,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Path2D;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -21,6 +24,8 @@ public class Pizza extends JPanel {
     private Ellipse2D.Double drawingArea; // El área de dibujo delimitada por un óvalo
     private boolean painting; // Indica si se está pintando o no
     private int lastX, lastY; // Última posición del ratón
+    private List<Integer> imagenes;
+    private boolean tieneRelleno;
 
     private ImageIcon imagen1; // La primera imagen
 	private ImageIcon imagen2;
@@ -96,7 +101,16 @@ public class Pizza extends JPanel {
 
     public Pizza() {
         this.setSize(820, 630); // Se selecciona el tamaño del panel
-        
+        this.imagenes = new ArrayList<>();
+        // Aquí puedes agregar las imágenes que tenga la pizza por defecto
+        this.imagenes.add(7);
+        this.imagenes.add(15);
+        this.imagenes.add(17);
+        this.imagenes.add(19);
+        this.imagenes.add(21);
+        this.imagenes.add(23);
+        // Aquí puedes establecer si la pizza tiene relleno por defecto
+        this.tieneRelleno = true;
         imagen1 = new ImageIcon(getClass().getResource("/Imagenes/tuberia.png"));
         imagen2 = new ImageIcon(getClass().getResource("/Imagenes/BARRA.png"));
         imagen11 = new ImageIcon(getClass().getResource("/Imagenes/Estante.png"));
@@ -487,7 +501,18 @@ public class Pizza extends JPanel {
             //System.out.println("Se ha generado la imagen 15 encima de la imagen 7 y del área de pintado");
         }
         
+        
     }
+ // Método para verificar si la pizza tiene relleno
+    public boolean tieneRelleno() {
+        return this.tieneRelleno;
+    }
+
+    // Método para obtener las imágenes que tiene la pizza
+    public List<Integer> getImagenes() {
+        return this.imagenes;
+    }
+
     
 
     @Override
@@ -562,6 +587,8 @@ public class Pizza extends JPanel {
         // Verificar si el área cubierta por el path es al menos el 80% del área total
         // Rellenar el óvalo solo si el área cubierta por el path es al menos el 80% del área total
         if (pathArea >= 0.8 * areaTotal) {
+        	
+        	System.out.println("El área de la pizza está completamente cubierta.");
            
             g2d.fill(drawingArea);
         }
@@ -626,14 +653,28 @@ public class Pizza extends JPanel {
             }
             brushGraphics.dispose();
         }
+        
+        
      // Dibujar las imágenes en el panel
+     // Verificar qué imágenes de la lista dada están presentes
+        System.out.println("Imágenes presentes:");
+        if (imagen17Counter > 0) {
+            System.out.println("Imagen 17 está presente.");
+        }
+        if (imagen19Counter > 0) {
+            System.out.println("Imagen 19 está presente.");
+        }
+        g2d.dispose();
+        // Repetir para las otras imágenes de la lista...
+    }
+
        
 
 
-        g2d.dispose();
+        
         
        
          // Establecer el panel como transparente
     }
-  }
+  
 

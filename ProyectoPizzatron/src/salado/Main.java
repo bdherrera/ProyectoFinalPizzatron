@@ -1,4 +1,6 @@
 package salado;
+import salado.PizzaInfo;
+
 import java.io.IOException;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -32,6 +34,12 @@ public class Main {
         // Crear el panel de la pizza
         Pizza pizza = new Pizza();
         pizza.setBounds(0, 0, 820, 630); // Ajustar tamaño y posición
+        
+        // Crear una instancia de la clase PizzaInfo y pasarle la instancia de Pizza
+        PizzaInfo pizzaInfo = new PizzaInfo(pizza);
+
+        // Obtener información de la pizza utilizando la clase PizzaInfo
+        pizzaInfo.obtenerInformacion();
         
        // Ingredientes ingredientes = new Ingredientes();
        // ingredientes.setBounds(0, 0, 820, 630); // Ajustar tamaño y posición
