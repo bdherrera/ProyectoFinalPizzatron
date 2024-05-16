@@ -324,7 +324,27 @@ public class Pizza extends JPanel {
 
         if (cajaBounds.intersects(pizzaBounds)) { // Si hay intersección entre las dos áreas
             System.out.println("¡Colisión detectada!"); // Mostrar mensaje en la consola
+            reiniciarDibujo(); // Reiniciar el trazado del área de dibujo
+            limpiarImagenes(); // Limpiar las imágenes generadas encima de la imagen 7
         }
+    }
+
+    private void reiniciarDibujo() {
+        // Reiniciar el trazado del path
+        path.reset();
+        repaint(); // Volver a pintar el panel para reflejar los cambios
+    }
+
+    private void limpiarImagenes() {
+        // Establecer el contador de imágenes a 0
+        imagen17Counter = 0;
+        imagen19Counter = 0;
+        imagen21Counter = 0;
+        imagen23Counter = 0;
+        setImagen15Visible(false);
+
+        // Redibujar el panel para eliminar las imágenes generadas
+        repaint();
     }
     
     //primera parte

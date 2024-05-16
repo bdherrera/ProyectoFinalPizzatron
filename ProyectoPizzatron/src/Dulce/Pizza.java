@@ -329,6 +329,7 @@ public class Pizza extends JPanel {
         imagen19Counter = 0;
         imagen21Counter = 0;
         imagen23Counter = 0;
+        setImagen15Visible(false);
 
         // Redibujar el panel para eliminar las imágenes generadas
         repaint();
@@ -532,7 +533,7 @@ public class Pizza extends JPanel {
         g2d.drawImage(imagen22.getImage(), x22, y22, 125, 80, null);
         
         
-        
+        g2d.drawImage(imagen10.getImage(), x10, 400, 220, 287, null);
 	    g2d.drawImage(imagen1.getImage(), x1,  335, 130, 300, null);
 	    g2d.drawImage(imagen12.getImage(), x12, y12, 45, 120, null);
         g2d.drawImage(imagen13.getImage(), x13, y13, 30, 100, null);
@@ -543,7 +544,7 @@ public class Pizza extends JPanel {
 	    g2d.drawImage(imagen11.getImage(), x11, 200, 120, 430, null);
 	    
         
-        g2d.drawImage(imagen10.getImage(), x10, 400, 220, 287, null);
+       
         g2d.drawImage(imagen14.getImage(), x14, y14, 110, 80, null);
         g2d.drawImage(imagen16.getImage(), x16, y16, 120, 80, null);
         g2d.drawImage(imagen18.getImage(), x18, y18, 120, 80, null);
