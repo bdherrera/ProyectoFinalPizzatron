@@ -14,7 +14,7 @@ import view.VentanaProfiles;
 import view.VentanaTutorial;
 
 import view.VentanaSkins;
-import view.VentanaNivelNormal;
+
 import view.VentanaNivelDulce;
 
 public class Controller {
@@ -27,7 +27,6 @@ public class Controller {
 	private VentanaTutorial ventanaTutorial;
 	private VentanaSkins ventanaSkins;
 	private VentanaNivelDulce ventanaNivelDulce;
-	private VentanaNivelNormal ventanaNivelNormal;
 
 	public Controller() {
 		// Crear la ventana principal y mostrarla primero
@@ -108,23 +107,6 @@ public class Controller {
 			mostrarVentanaMenu(); // Mostrar la ventana del menú nuevamente
 		});
 		ventanaPlay.setVisible(true);
-
-		ventanaPlay.setBotonNivelDulceListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ventanaPlay.setVisible(false);
-				mostrarVentanaNivelDulce();
-				ventanaNivelDulce.setVisible(true);
-			}
-		});
-		ventanaPlay.setBotonNivelNormalListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ventanaPlay.setVisible(false); // Ocultar la ventana PLAY en lugar de cerrarla
-				mostrarVentanaNivelNormal(); // Mostrar la ventana del menú nuevamente
-				ventanaNivelNormal.setVisible(true);
-			}
-		});
 	}
 
 	private void mostrarVentanaTutorial() {
@@ -179,15 +161,7 @@ public class Controller {
 		ventanaNivelDulce.setVisible(true);
 	}
 
-	private void mostrarVentanaNivelNormal() {
-		ventanaMenu.dispose(); // Cerrar ventana anterior
-		ventanaNivelNormal = new VentanaNivelNormal();
-		ventanaNivelNormal.setBotonBackListener(e -> {
-			ventanaNivelNormal.dispose(); // Cerrar ventana PLAY
-			mostrarVentanaMenu(); // Mostrar la ventana del menú nuevamente
-		});
-		ventanaNivelNormal.setVisible(true);
-	}
+	
 	
 
 }

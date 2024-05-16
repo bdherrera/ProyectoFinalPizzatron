@@ -1,4 +1,4 @@
-package main;
+package Dulce;
 
 import java.awt.Graphics;
 

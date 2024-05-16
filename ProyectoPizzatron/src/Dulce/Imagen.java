@@ -1,4 +1,4 @@
-package main;
+package Dulce;
 
 import javax.swing.*;
 import java.awt.*;

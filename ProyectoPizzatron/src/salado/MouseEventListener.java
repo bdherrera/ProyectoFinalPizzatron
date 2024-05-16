@@ -1,4 +1,4 @@
-package main;
+package salado;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

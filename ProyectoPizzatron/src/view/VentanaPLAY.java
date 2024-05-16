@@ -1,15 +1,21 @@
 package view;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import salado.Main;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class VentanaPLAY extends JFrame {
 	
@@ -18,7 +24,7 @@ public class VentanaPLAY extends JFrame {
 	private JButton botonNivelDulce;
 	private JButton botonNivelNormal;
 	private VentanaNivelDulce dulce;
-	private VentanaNivelNormal normal;
+	
 	
 	public VentanaPLAY() {
 		setTitle("");
@@ -55,6 +61,17 @@ public class VentanaPLAY extends JFrame {
 		botonNivelNormal.setContentAreaFilled(false); // Establece el área de contenido del botón como transparente
 		botonNivelNormal.setBorderPainted(false);
 		botonNivelNormal.setActionCommand("NIVEL NORMAL");
+		botonNivelNormal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Llamar al método main de la clase Main
+                try {
+                    Main.main(null);
+                } catch (IOException | UnsupportedAudioFileException | LineUnavailableException ex) {
+                    ex.printStackTrace(); // Manejo básico de excepciones
+                }
+            }
+        });
 		add(botonNivelNormal);
 		
 		
