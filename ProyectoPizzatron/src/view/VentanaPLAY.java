@@ -52,6 +52,7 @@ public class VentanaPLAY extends JFrame {
 		botonNivelDulce.setContentAreaFilled(false); // Establece el área de contenido del botón como transparente
 		botonNivelDulce.setBorderPainted(false);
 		botonNivelDulce.setActionCommand("NIVEL DULCE");
+		
 		add(botonNivelDulce);
 		
 		ImageIcon normalIcon = new ImageIcon("media/Botones/PIZZATRN.png");
